@@ -2,6 +2,7 @@
 
 <template>
     <div class="preview-app-wrapper">
+        <!--
       <el-popconfirm
         confirm-button-text="确认"
         cancel-button-text="取消"
@@ -12,6 +13,7 @@
         <el-button style="margin-top: 100px" type="text" slot="reference">
           <i class="el-icon-delete" />
         </el-button>
+        -->
       </el-popconfirm>
       <div v-if="dataInfo.length>0" class="phoneDownLoadWrapper">
         <img class="app-icon"  @error="e=>setDefaultIcon(e,this.curInfo.appInfo)" :src="this.curInfo.appInfo.icon || ''" alt="">

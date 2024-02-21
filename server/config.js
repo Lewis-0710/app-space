@@ -5,10 +5,10 @@ let path = require('path');
 
 
 const config = {
-  baseUrl: process.env.APP_SPA_DOMAIN || "http://127.0.0.1:80", //baseUrl应用请求的url地址,比如https://appspace
-  port: process.env.APP_SPA_PORT || '80', //server运行的端口
-  // baseUrl: process.env.APP_SPA_DOMAIN || "http://127.0.0.1:8085", //baseUrl应用请求的url地址,比如https://appspace
-  // port: process.env.APP_SPA_PORT || '8085', //server运行的端口
+  // baseUrl: process.env.APP_SPA_DOMAIN || "http://127.0.0.1:80", //baseUrl应用请求的url地址,比如https://appspace
+  // port: process.env.APP_SPA_PORT || '80', //server运行的端口
+  baseUrl: process.env.APP_SPA_DOMAIN || "http://127.0.0.1:8085", //baseUrl应用请求的url地址,比如https://appspace
+  port: process.env.APP_SPA_PORT || '8085', //server运行的端口
 
   iosPlistSource: 'api', //[api,yun] api通过接口获取 yun通过云盘接口获取（前提有云盘存储） 解决ios本地无https接口 用云盘方案
   //解决局域网iOS https证书 临时体验用
@@ -39,12 +39,12 @@ const config = {
   ldapBase: process.env.APP_SPA_LDAP_BASE || '', //ldap base
 
   storageType: process.env.STORAGE_TYPE || 'local',//"s3",
-  storageDir: process.env.STORAGE_DIR || '/data/storage',//path.join(__dirname, '../docker/storage'),
+  storageDir: process.env.STORAGE_DIR || path.join(__dirname, '../docker/storage'),
 
   // Config for local storage when storageType value is "local".
   local: {
     // downloadUrl
-    downloadUrl: process.env.APP_SPA_DOMAIN || "",
+      downloadUrl: process.env.APP_SPA_DOMAIN || "http://192.168.1.140:8085",
   },
   // Config for qiniu (http://www.qiniu.com/) cloud storage when storageType value is "qiniu".
   qiniu: {
